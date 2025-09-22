@@ -1,1 +1,1 @@
-# note-taking-ai
+note-taking-ai
