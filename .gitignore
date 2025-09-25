@@ -2,6 +2,9 @@ node_modules
 .turbo
 .alchemy
 .env
+tests/e2e/screenshots
+tests/e2e/test-results
+
 
 # START Ruler Generated Files
 /.mcp.json
