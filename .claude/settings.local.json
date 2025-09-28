@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(mkdir:*)",
+      "Bash(bun install:*)",
+      "Bash(bun run test:e2e:debug:*)",
+      "Bash(turbo run test:*)",
+      "Bash(bunx turbo run test:*)",
+      "Bash(bunx turbo:*)",
+      "Bash(bun run:*)",
+      "Bash(cat:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7"
+  ]
+}
