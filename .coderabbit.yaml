@@ -1,0 +1,4 @@
+pathFilters:
+  - "!.claude/**"
+  - "!.specify/**"
+  - "!.bmad-core/**"
