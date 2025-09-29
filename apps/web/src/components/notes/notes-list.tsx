@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { client, orpc } from "@/utils/orpc";
+import { Plus, Edit, Trash2, Search } from "lucide-react";
 
 type NotesListProps = {
   onNoteSelect?: (noteId: string) => void;
