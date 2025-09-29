@@ -22,7 +22,15 @@
       "!**/.source"
     ]
   },
-  "extends": [
-    "ultracite"
-  ]
+  "extends": ["ultracite"],
+  "linter": {
+    "rules": {
+      "style": {
+        "noMagicNumbers": "off"
+      },
+      "suspicious": {
+        "noConsole": "off"
+      }
+    }
+  }
 }

@@ -11,14 +11,6 @@
     "forceConsistentCasingInFileNames": true,
     "types": ["bun-types", "node"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.js"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "coverage",
-    "test-reports"
-  ]
+  "include": ["**/*.ts", "**/*.js"],
+  "exclude": ["node_modules", "dist", "coverage", "test-reports"]
 }

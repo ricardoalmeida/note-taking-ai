@@ -1,9 +1,9 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
-import Dashboard from "./dashboard";
+import NotesApp from "./notes-app";
 
-export default async function DashboardPage() {
+export default async function NotesPage() {
   const session = await authClient.getSession({
     fetchOptions: {
       headers: await headers(),
@@ -14,11 +14,5 @@ export default async function DashboardPage() {
     redirect("/login");
   }
 
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome {session.data.user.name}</p>
-      <Dashboard session={session.data} />
-    </div>
-  );
+  return <NotesApp session={session.data} />;
 }

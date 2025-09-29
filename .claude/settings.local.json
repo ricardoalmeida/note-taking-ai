@@ -9,11 +9,13 @@
       "Bash(bunx turbo run test:*)",
       "Bash(bunx turbo:*)",
       "Bash(bun run:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(bunx drizzle-kit:*)",
+      "Bash(bun test:*)",
+      "Bash(biome check:*)",
+      "Bash(bunx biome check:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "context7"
-  ]
+  "enabledMcpjsonServers": ["context7"]
 }
