@@ -1,5 +1,20 @@
+node_modules
+.turbo
+.alchemy
+.env
+tests/e2e/screenshots
+tests/e2e/test-results
+
 
 # START Ruler Generated Files
+/.mcp.json
+/.mcp.json.bak
+/.qwen/settings.json
+/.qwen/settings.json.bak
+/.vscode/mcp.json
+/.vscode/mcp.json.bak
+/AGENTS.md
+/AGENTS.md.bak
 /CLAUDE.md
 /CLAUDE.md.bak
 /WARP.md

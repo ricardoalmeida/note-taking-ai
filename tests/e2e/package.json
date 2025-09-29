@@ -1,0 +1,16 @@
+{
+  "name": "e2e",
+  "version": "0.1.0",
+  "private": true,
+  "description": "End-to-end tests for ricardoalmeida-dubai project",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "clean": "rm -rf screenshots/* test-reports/*"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "^1.2.6",
+    "bun-types": "^1.2.15"
+  }
+}
