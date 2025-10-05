@@ -63,7 +63,7 @@ note-taking-ai/
 - `bun build`: Build all applications
 - `bun dev:web`: Start only the web application
 - `bun dev:server`: Start only the server
-- `npx ultracite fix`: Format and fix code automatically
+- `bunx ultracite check`: Format and fix code automatically
 - `bun db:push`: Push schema changes to database
 - `bun db:studio`: Open database studio UI
 - `cd apps/server && bun db:local`: Start the local SQLite database
