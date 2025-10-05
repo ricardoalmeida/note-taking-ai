@@ -20,7 +20,7 @@ export default function Home() {
             <span className="text-muted-foreground text-sm">
               {healthCheck.isLoading
                 ? "Checking..."
-                : // biome-ignore lint/style/noNestedTernary: <explanation>
+                : // biome-ignore lint/style/noNestedTernary: explanation
                   healthCheck.data
                   ? "Connected"
                   : "Disconnected"}

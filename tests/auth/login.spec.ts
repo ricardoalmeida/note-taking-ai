@@ -1,4 +1,4 @@
-/** biome-ignore-all lint/performance/useTopLevelRegex: <explanation> */
+/** biome-ignore-all lint/performance/useTopLevelRegex: explanation */
 import { expect, TEST_USER, test } from "../fixtures/auth";
 
 test.describe("User Login", () => {

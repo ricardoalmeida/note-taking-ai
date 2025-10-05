@@ -39,7 +39,7 @@ export default function SignInForm({
     validators: {
       onSubmit: z.object({
         email: z.email("Invalid email address"),
-        // biome-ignore lint/style/noMagicNumbers: <explanation>
+        // biome-ignore lint/style/noMagicNumbers: explanation
         password: z.string().min(8, "Password must be at least 8 characters"),
       }),
     },

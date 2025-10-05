@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noUnknownAtRules: explanation */
 @import "tailwindcss";
 @import "tw-animate-css";
 @source "../node_modules/streamdown/dist/index.js";

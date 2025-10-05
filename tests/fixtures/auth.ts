@@ -1,24 +1,22 @@
-import { test as base } from "@playwright/test";
+import { test as base, expect } from "@playwright/test";
 import { resetDatabase } from "../helpers/database";
 
+// biome-ignore lint/performance/noBarrelFile: explanation
 export { expect } from "@playwright/test";
 
 type AuthFixtures = {
-  cleanDatabase: void;
+  authenticatedPage: typeof expect.soft;
 };
 
 /**
  * Extended test with database cleanup
  */
 export const test = base.extend<AuthFixtures>({
-  cleanDatabase: [
-    async ({}, use) => {
-      // Reset database before each test
-      await resetDatabase();
-      await use();
-    },
-    { auto: true },
-  ],
+  authenticatedPage: async (_, use) => {
+    // Reset database before each test
+    await resetDatabase();
+    await use(expect.soft);
+  },
 });
 
 /**

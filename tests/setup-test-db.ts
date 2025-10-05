@@ -1,28 +1,29 @@
 /// <reference types="bun-types" />
 
 import { createClient } from "@libsql/client";
-import { drizzle } from "drizzle-orm/libsql";
 import { sql } from "drizzle-orm";
+import { drizzle } from "drizzle-orm/libsql";
 
 async function setupTestDatabase() {
-	const dbPath = "./apps/server/test.db";
+  const dbPath = "./apps/server/test.db";
 
-	// Remove old database files
-	await Bun.$`rm -f ${dbPath} ${dbPath}-shm ${dbPath}-wal`.quiet();
+  // Remove old database files
+  // biome-ignore lint/correctness/noUndeclaredVariables: DB setup script in Bun environment
+  await Bun.$`rm -f ${dbPath} ${dbPath}-shm ${dbPath}-wal`.quiet();
 
-	process.stdout.write("Setting up test database...\n");
+  process.stdout.write("Setting up test database...\n");
 
-	// Create database client
-	const client = createClient({
-		url: `file:${dbPath}`,
-	});
+  // Create database client
+  const client = createClient({
+    url: `file:${dbPath}`,
+  });
 
-	const db = drizzle({ client });
+  const db = drizzle({ client });
 
-	try {
-		// Create tables based on schema
-		// Better Auth tables
-		await db.run(sql`
+  try {
+    // Create tables based on schema
+    // Better Auth tables
+    await db.run(sql`
       CREATE TABLE IF NOT EXISTS user (
         id TEXT PRIMARY KEY NOT NULL,
         name TEXT NOT NULL,
@@ -34,7 +35,7 @@ async function setupTestDatabase() {
       )
     `);
 
-		await db.run(sql`
+    await db.run(sql`
       CREATE TABLE IF NOT EXISTS session (
         id TEXT PRIMARY KEY NOT NULL,
         expires_at INTEGER NOT NULL,
@@ -48,7 +49,7 @@ async function setupTestDatabase() {
       )
     `);
 
-		await db.run(sql`
+    await db.run(sql`
       CREATE TABLE IF NOT EXISTS account (
         id TEXT PRIMARY KEY NOT NULL,
         account_id TEXT NOT NULL,
@@ -67,7 +68,7 @@ async function setupTestDatabase() {
       )
     `);
 
-		await db.run(sql`
+    await db.run(sql`
       CREATE TABLE IF NOT EXISTS verification (
         id TEXT PRIMARY KEY NOT NULL,
         identifier TEXT NOT NULL,
@@ -78,14 +79,14 @@ async function setupTestDatabase() {
       )
     `);
 
-		process.stdout.write("Test database setup complete!\n");
-		process.exit(0);
-	} catch (error) {
-		process.stderr.write(
-			`Failed to setup test database: ${error instanceof Error ? error.message : String(error)}\n`,
-		);
-		process.exit(1);
-	}
+    process.stdout.write("Test database setup complete!\n");
+    process.exit(0);
+  } catch (error) {
+    process.stderr.write(
+      `Failed to setup test database: ${error instanceof Error ? error.message : String(error)}\n`
+    );
+    process.exit(1);
+  }
 }
 
 setupTestDatabase();

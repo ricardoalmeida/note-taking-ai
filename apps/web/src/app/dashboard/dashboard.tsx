@@ -4,7 +4,7 @@ import type { authClient } from "@/lib/auth-client";
 import { orpc } from "@/utils/orpc";
 
 export default function Dashboard({
-  // biome-ignore lint/correctness/noUnusedFunctionParameters: <explanation>
+  // biome-ignore lint/correctness/noUnusedFunctionParameters: explanation
   session,
 }: {
   session: typeof authClient.$Infer.Session;
