@@ -3,7 +3,21 @@
     "allow": [
       "mcp__shadcn__get_project_registries",
       "mcp__shadcn__view_items_in_registries",
-      "Bash(bunx biome check:*)"
+      "Bash(bunx biome check:*)",
+      "Bash(cat:*)",
+      "Read(//Users/ricardoalmeida/dev/**)",
+      "Bash(bun add:*)",
+      "Bash(bun test:*)",
+      "Bash(chmod:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(DATABASE_URL=\"file:./test.db\" bun run db:push)",
+      "Bash(bash:*)",
+      "Bash(bun run drizzle-kit push:*)",
+      "Bash(./tests/setup-db.sh:*)",
+      "Bash(bun run:*)",
+      "Bash(bun test:e2e:*)",
+      "Bash(curl:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

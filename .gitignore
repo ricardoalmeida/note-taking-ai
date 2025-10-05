@@ -14,3 +14,14 @@ node_modules
 /WARP.md
 /WARP.md.bak
 # END Ruler Generated Files
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Test databases
+test.db
+test.db-shm
+test.db-wal
+*.test.db
