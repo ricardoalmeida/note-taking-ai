@@ -1,22 +1,23 @@
-import { test as base, expect } from "@playwright/test";
+/** biome-ignore-all lint/suspicious/noConfusingVoidType: explanation */
+/** biome-ignore-all lint/correctness/noUnusedImports: explanation */
+import { test as base, type expect } from "@playwright/test";
 import { resetDatabase } from "../helpers/database";
 
 // biome-ignore lint/performance/noBarrelFile: explanation
 export { expect } from "@playwright/test";
 
 type AuthFixtures = {
-  authenticatedPage: typeof expect.soft;
+  authenticatedPage: void;
 };
 
 /**
  * Extended test with database cleanup
  */
-export const test = base.extend<AuthFixtures>({
-  authenticatedPage: async (_, use) => {
-    // Reset database before each test
-    await resetDatabase();
-    await use(expect.soft);
-  },
+export const test = base.extend<AuthFixtures>({});
+
+test.beforeEach(async () => {
+  // Reset database before each test
+  await resetDatabase();
 });
 
 /**
