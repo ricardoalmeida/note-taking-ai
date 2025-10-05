@@ -1,82 +1,28 @@
-<!-- Source: .ruler/AGENTS.md -->
+---
+applyTo: "**/*.{ts,tsx,js,jsx}"
+---
 
-# AGENTS.md
-
-Centralised AI agent instructions. Add coding guidelines, style guides, and project context here.
-
-Ruler concatenates all .md files in this directory (and subdirectories), starting with AGENTS.md (if present), then remaining files in sorted order.
-
-**#** AI Agent Instructions
-
-**##** Project Context
-Please review these key documents before making changes:
-**-** Architecture: See **`docs/architecture.md`**
-**-** Product Requirements: See **`docs/prd.md`**
-
-**##** Coding Guidelines
-**-** Follow the architecture patterns described in our docs
-**-** Ensure changes align with PRD requirements
-
-## Project Structure
-
-This is a monorepo with the following structure:
-
-- **`apps/server/`** - Backend server (Next.js API)
-
-## Available Scripts
-
-- `bun run dev` - Start all apps in development mode
-- `bun run dev:server` - Start only the server
-
-## Database Commands
-
-All database operations should be run from the server workspace:
-
-- `bun run db:push` - Push schema changes to database
-- `bun run db:studio` - Open database studio
-- `bun run db:generate` - Generate Drizzle files
-- `bun run db:migrate` - Run database migrations
-
-Database schema files are located in `apps/server/src/db/schema/`
-
-## API Structure
-
-- oRPC endpoints are in `apps/server/src/api/`
-- Client-side API utils are in `apps/web/src/utils/api.ts`
-
-## Authentication
-
-Authentication is enabled in this project:
-
-- Server auth logic is in `apps/server/src/lib/auth.ts`
-
-## Key Points
-
-- This is a Turborepo monorepo using bun workspaces
-- Each app has its own `package.json` and dependencies
-- Run commands from the root to execute across all workspaces
-- Run workspace-specific commands with `bun run command-name`
-- Turborepo handles build caching and parallel execution
+# Project Context
 
 Ultracite enforces strict type safety, accessibility standards, and consistent code quality for JavaScript/TypeScript projects using Biome's lightning-fast formatter and linter.
 
-### Key Principles
+## Key Principles
 
 - Zero configuration required
 - Subsecond performance
 - Maximum type safety
 - AI-friendly code generation
 
-### Before Writing Code
+## Before Writing Code
 
 1. Analyze existing patterns in the codebase
 2. Consider edge cases and error scenarios
 3. Follow the rules below strictly
 4. Validate accessibility requirements
 
-### Rules
+## Rules
 
-#### Accessibility (a11y)
+### Accessibility (a11y)
 
 - Don't use `accessKey` attribute on any HTML element.
 - Don't set `aria-hidden="true"` on focusable elements.
@@ -113,7 +59,7 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Use valid values for the `autocomplete` attribute on input elements.
 - Use correct ISO language/country codes for the `lang` attribute.
 
-#### Code Complexity and Quality
+### Code Complexity and Quality
 
 - Don't use consecutive spaces in regular expression literals.
 - Don't use the `arguments` object.
@@ -169,7 +115,7 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Don't use 8 and 9 escape sequences in string literals.
 - Don't use literal numbers that lose precision.
 
-#### React and JSX Best Practices
+### React and JSX Best Practices
 
 - Don't use the return value of React.render.
 - Make sure all dependencies are correctly specified in React hooks.
@@ -188,7 +134,7 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Use `<>...</>` instead of `<Fragment>...</Fragment>`.
 - Watch out for possible "wrong" semicolons inside JSX elements.
 
-#### Correctness and Safety
+### Correctness and Safety
 
 - Don't assign a value to itself.
 - Don't return a value from a setter.
@@ -244,7 +190,7 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Declare regex literals at the top level.
 - Don't use `target="_blank"` without `rel="noopener"`.
 
-#### TypeScript Best Practices
+### TypeScript Best Practices
 
 - Don't use TypeScript enums.
 - Don't export imported variables.
@@ -269,7 +215,7 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Don't use overload signatures that aren't next to each other.
 - Use the namespace keyword instead of the module keyword to declare TypeScript namespaces.
 
-#### Style and Consistency
+### Style and Consistency
 
 - Don't use global `eval()`.
 - Don't use callbacks in asynchronous tests and hooks.
@@ -357,27 +303,27 @@ Ultracite enforces strict type safety, accessibility standards, and consistent c
 - Make sure to use the digits argument with Number#toFixed().
 - Make sure to use the "use strict" directive in script files.
 
-#### Next.js Specific Rules
+### Next.js Specific Rules
 
 - Don't use `<img>` elements in Next.js projects.
 - Don't use `<head>` elements in Next.js projects.
 - Don't import next/document outside of pages/\_document.jsx in Next.js projects.
 - Don't use the next/head module in pages/\_document.js on Next.js projects.
 
-#### Testing Best Practices
+### Testing Best Practices
 
 - Don't use export or module.exports in test files.
 - Don't use focused tests.
 - Make sure the assertion function, like expect, is placed inside an it() function call.
 - Don't use disabled tests.
 
-#### Common Tasks
+## Common Tasks
 
 - `npx ultracite init` - Initialize Ultracite in your project
 - `npx ultracite fix` - Format and fix code automatically
 - `npx ultracite check` - Check for issues without fixing
 
-#### Example: Error Handling
+## Example: Error Handling
 
 ```typescript
 // ✅ Good: Comprehensive error handling
