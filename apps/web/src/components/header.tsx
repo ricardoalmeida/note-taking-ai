@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { Card } from "./ui/card";
 import { ModeToggle } from "./mode-toggle";
 import UserMenu from "./user-menu";
 
@@ -11,8 +12,8 @@ export default function Header() {
   ] as const;
 
   return (
-    <div>
-      <div className="flex-r]w flex items-center justify-between px-2 py-1">
+    <Card className="rounded-none border-x-0 border-t-0">
+      <div className="flex w-full items-center justify-between px-4 py-3">
         <nav className="flex gap-4 text-lg">
           {links.map(({ to, label }) => (
             <Link href={to} key={to}>
@@ -25,7 +26,6 @@ export default function Header() {
           <UserMenu />
         </div>
       </div>
-      <hr />
-    </div>
+    </Card>
   );
 }
