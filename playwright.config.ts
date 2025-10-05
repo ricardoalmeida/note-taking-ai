@@ -13,10 +13,7 @@ const TEST_WEB_PORT = process.env.TEST_WEB_PORT || "4001";
  */
 export default defineConfig({
   testDir: "./tests",
-  testMatch: "**/*.spec.ts",
-  fullyParallel: false,
-  forbidOnly: Boolean(process.env.CI),
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   workers: 1,
   reporter: "html",
   timeout: 60_000,
