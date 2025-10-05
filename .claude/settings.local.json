@@ -1,3 +1,15 @@
 {
-  "enabledMcpjsonServers": ["context7", "better-auth"]
+  "permissions": {
+    "allow": [
+      "mcp__shadcn__get_project_registries",
+      "mcp__shadcn__view_items_in_registries",
+      "Bash(bunx biome check:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "context7",
+    "better-auth",
+    "shadcn"
+  ]
 }
