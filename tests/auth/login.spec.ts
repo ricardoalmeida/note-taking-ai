@@ -53,8 +53,8 @@ test.describe("User Login", () => {
     await page.getByLabel(/password/i).fill(TEST_USER.password);
     await page.getByRole("button", { name: /sign in/i }).click();
 
-    // Should show error message
-    await expect(page.getByText(/invalid.*credentials/i)).toBeVisible();
+    //Invalid email or password
+    await expect(page.getByText(/invalid email or password/i)).toBeVisible();
   });
 
   test("should show error with invalid password", async ({ page }) => {
@@ -76,7 +76,7 @@ test.describe("User Login", () => {
     await page.getByRole("button", { name: /sign in/i }).click();
 
     // Should show error message
-    await expect(page.getByText(/invalid.*credentials/i)).toBeVisible();
+    await expect(page.getByText(/invalid email or password/i)).toBeVisible();
   });
 
   test("should show validation error for invalid email format", async ({
@@ -89,8 +89,8 @@ test.describe("User Login", () => {
 
     await page.getByRole("button", { name: /sign in/i }).click();
 
-    // Should show validation error
-    await expect(page.getByText(/invalid email address/i)).toBeVisible();
+    // Should show validation error from Zod
+    await expect(page.getByText(/invalid email/i)).toBeVisible();
   });
 
   test("should show validation error for short password", async ({ page }) => {

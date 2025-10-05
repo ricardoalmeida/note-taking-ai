@@ -27,43 +27,43 @@ async function setupTestDatabase() {
         id TEXT PRIMARY KEY NOT NULL,
         name TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
-        emailVerified INTEGER NOT NULL DEFAULT 0,
+        email_verified INTEGER NOT NULL DEFAULT 0,
         image TEXT,
-        createdAt INTEGER NOT NULL,
-        updatedAt INTEGER NOT NULL
+        created_at INTEGER NOT NULL,
+        updated_at INTEGER NOT NULL
       )
     `);
 
 		await db.run(sql`
       CREATE TABLE IF NOT EXISTS session (
         id TEXT PRIMARY KEY NOT NULL,
-        expiresAt INTEGER NOT NULL,
+        expires_at INTEGER NOT NULL,
         token TEXT NOT NULL UNIQUE,
-        createdAt INTEGER NOT NULL,
-        updatedAt INTEGER NOT NULL,
-        ipAddress TEXT,
-        userAgent TEXT,
-        userId TEXT NOT NULL,
-        FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE
+        created_at INTEGER NOT NULL,
+        updated_at INTEGER NOT NULL,
+        ip_address TEXT,
+        user_agent TEXT,
+        user_id TEXT NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
       )
     `);
 
 		await db.run(sql`
       CREATE TABLE IF NOT EXISTS account (
         id TEXT PRIMARY KEY NOT NULL,
-        accountId TEXT NOT NULL,
-        providerId TEXT NOT NULL,
-        userId TEXT NOT NULL,
-        accessToken TEXT,
-        refreshToken TEXT,
-        idToken TEXT,
-        accessTokenExpiresAt INTEGER,
-        refreshTokenExpiresAt INTEGER,
+        account_id TEXT NOT NULL,
+        provider_id TEXT NOT NULL,
+        user_id TEXT NOT NULL,
+        access_token TEXT,
+        refresh_token TEXT,
+        id_token TEXT,
+        access_token_expires_at INTEGER,
+        refresh_token_expires_at INTEGER,
         scope TEXT,
         password TEXT,
-        createdAt INTEGER NOT NULL,
-        updatedAt INTEGER NOT NULL,
-        FOREIGN KEY (userId) REFERENCES user(id) ON DELETE CASCADE
+        created_at INTEGER NOT NULL,
+        updated_at INTEGER NOT NULL,
+        FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
       )
     `);
 
@@ -72,9 +72,9 @@ async function setupTestDatabase() {
         id TEXT PRIMARY KEY NOT NULL,
         identifier TEXT NOT NULL,
         value TEXT NOT NULL,
-        expiresAt INTEGER NOT NULL,
-        createdAt INTEGER,
-        updatedAt INTEGER
+        expires_at INTEGER NOT NULL,
+        created_at INTEGER,
+        updated_at INTEGER
       )
     `);
 

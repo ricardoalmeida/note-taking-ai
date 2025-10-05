@@ -15,7 +15,9 @@ test.describe("User Logout", () => {
 
   test("should successfully logout from dashboard", async ({ page }) => {
     // User should be logged in
-    await expect(page.getByText(TEST_USER.name)).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: TEST_USER.name })
+    ).toBeVisible();
 
     // Click user menu
     await page.getByRole("button", { name: TEST_USER.name }).click();
@@ -56,7 +58,9 @@ test.describe("User Logout", () => {
 
     // Should successfully login
     await expect(page).toHaveURL("/dashboard");
-    await expect(page.getByText(TEST_USER.name)).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: TEST_USER.name })
+    ).toBeVisible();
   });
 
   test("should logout from any page", async ({ page }) => {
@@ -64,7 +68,9 @@ test.describe("User Logout", () => {
     await page.goto("/ai");
 
     // User should still be logged in
-    await expect(page.getByText(TEST_USER.name)).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: TEST_USER.name })
+    ).toBeVisible();
 
     // Logout from AI page
     await page.getByRole("button", { name: TEST_USER.name }).click();

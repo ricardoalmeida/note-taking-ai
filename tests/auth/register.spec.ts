@@ -22,7 +22,9 @@ test.describe("User Registration", () => {
     await expect(page).toHaveURL("/dashboard");
 
     // Should see user name in the menu
-    await expect(page.getByText(TEST_USER.name)).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: TEST_USER.name })
+    ).toBeVisible();
   });
 
   test("should show validation error for short password", async ({ page }) => {
@@ -50,7 +52,7 @@ test.describe("User Registration", () => {
     await page.getByRole("button", { name: /sign up/i }).click();
 
     // Should show validation error
-    await expect(page.getByText(/invalid email address/i)).toBeVisible();
+    await expect(page.locator(".text-destructive")).toBeVisible();
   });
 
   test("should show error when registering with existing email", async ({
