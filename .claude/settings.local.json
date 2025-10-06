@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__shadcn__get_project_registries",
+      "mcp__shadcn__view_items_in_registries",
+      "Bash(bunx ultracite check:*)",
+      "Bash(cat:*)",
+      "Bash(bun test:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(DATABASE_URL=\"file:./test.db\" bun run db:push)",
+      "Bash(./tests/setup-db.sh:*)",
+      "Bash(bun run:*)",
+      "Bash(bun test:e2e:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": ["context7", "better-auth", "shadcn"]
+}
