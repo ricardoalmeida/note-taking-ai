@@ -1,4 +1,3 @@
-/** biome-ignore-all lint/suspicious/noConsole: explanation */
 import { OpenAPIHandler } from "@orpc/openapi/fetch";
 import { OpenAPIReferencePlugin } from "@orpc/openapi/plugins";
 import { onError } from "@orpc/server";
